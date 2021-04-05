@@ -9,12 +9,11 @@
     "dot",
     "graphviz"
   ],
-  "repository": "https://github.com/rydesun/tree-sitter-dot",
-  "author": {
-    "name": "rydesun",
-    "email": "rydesun@gmail.com",
-    "url": "https://github.com/rydesun"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rydesun/tree-sitter-dot.git"
   },
+  "author": "rydesun <rydesun@gmail.com> (https://github.com/rydesun)",
   "license": "MIT",
   "dependencies": {
     "nan": "^2.14.2"
@@ -42,5 +41,9 @@
         "gv"
       ]
     }
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/rydesun/tree-sitter-dot/issues"
+  },
+  "homepage": "https://github.com/rydesun/tree-sitter-dot#readme"
 }

@@ -23,7 +23,7 @@ graph {
 ---
 
 (source_file
-  (keyword)
+  type: (keyword)
   block: (block
     (stmt_list
       (attribute
@@ -146,7 +146,7 @@ graph {
 ---
 
 (source_file
-  (keyword)
+  type: (keyword)
   block: (block
     (comment)
     (comment)

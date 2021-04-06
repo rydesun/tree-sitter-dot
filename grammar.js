@@ -14,10 +14,10 @@ module.exports = grammar({
       optional(
         alias(ignoreCase('strict'), $.keyword),
       ),
-      choice(
+      field('type', choice(
         alias(ignoreCase('graph'), $.keyword),
         alias(ignoreCase('digraph'), $.keyword),
-      ),
+      )),
       optional(field('id', $.id)),
       field('block', $.block),
     ),

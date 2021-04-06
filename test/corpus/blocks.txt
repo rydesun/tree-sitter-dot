@@ -10,7 +10,7 @@ strict graph {
 
 (source_file
   (keyword)
-  (keyword)
+  type: (keyword)
   block: (block
     (stmt_list
       (edge_stmt
@@ -34,7 +34,7 @@ strict digraph {
 
 (source_file
   (keyword)
-  (keyword)
+  type: (keyword)
   block: (block
     (stmt_list
       (edge_stmt
@@ -61,7 +61,7 @@ StRiCt grAPH {
 
 (source_file
   (keyword)
-  (keyword)
+  type: (keyword)
   block: (block
     (stmt_list
       (subgraph
@@ -92,7 +92,7 @@ graph {
 ---
 
 (source_file
-  (keyword)
+  type: (keyword)
   block: (block
     (stmt_list
       (subgraph

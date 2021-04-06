@@ -23,27 +23,31 @@
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[gG][rR][aA][pP][hH]"
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "[gG][rR][aA][pP][hH]"
+                },
+                "named": true,
+                "value": "keyword"
               },
-              "named": true,
-              "value": "keyword"
-            },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[dD][iI][gG][rR][aA][pP][hH]"
-              },
-              "named": true,
-              "value": "keyword"
-            }
-          ]
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "[dD][iI][gG][rR][aA][pP][hH]"
+                },
+                "named": true,
+                "value": "keyword"
+              }
+            ]
+          }
         },
         {
           "type": "CHOICE",

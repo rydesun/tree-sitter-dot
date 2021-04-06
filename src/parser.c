@@ -12,9 +12,9 @@
 #define ALIAS_COUNT 1
 #define TOKEN_COUNT 28
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 4
+#define FIELD_COUNT 5
 #define MAX_ALIAS_SEQUENCE_LENGTH 4
-#define PRODUCTION_ID_COUNT 8
+#define PRODUCTION_ID_COUNT 10
 
 enum {
   sym_identifier = 1,
@@ -395,7 +395,8 @@ enum {
   field_block = 1,
   field_id = 2,
   field_name = 3,
-  field_value = 4,
+  field_type = 4,
+  field_value = 5,
 };
 
 static const char *ts_field_names[] = {
@@ -403,32 +404,44 @@ static const char *ts_field_names[] = {
   [field_block] = "block",
   [field_id] = "id",
   [field_name] = "name",
+  [field_type] = "type",
   [field_value] = "value",
 };
 
 static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
-  [1] = {.index = 0, .length = 1},
-  [3] = {.index = 1, .length = 1},
-  [4] = {.index = 2, .length = 1},
-  [5] = {.index = 3, .length = 2},
-  [6] = {.index = 5, .length = 2},
-  [7] = {.index = 7, .length = 2},
+  [1] = {.index = 0, .length = 2},
+  [3] = {.index = 2, .length = 2},
+  [4] = {.index = 4, .length = 1},
+  [5] = {.index = 5, .length = 3},
+  [6] = {.index = 8, .length = 3},
+  [7] = {.index = 11, .length = 1},
+  [8] = {.index = 12, .length = 2},
+  [9] = {.index = 14, .length = 2},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
   [0] =
     {field_block, 1},
-  [1] =
-    {field_block, 2},
+    {field_type, 0},
   [2] =
+    {field_block, 2},
+    {field_type, 1},
+  [4] =
     {field_block, 0},
-  [3] =
+  [5] =
     {field_block, 2},
     {field_id, 1},
-  [5] =
+    {field_type, 0},
+  [8] =
     {field_block, 3},
     {field_id, 2},
-  [7] =
+    {field_type, 1},
+  [11] =
+    {field_block, 1},
+  [12] =
+    {field_block, 2},
+    {field_id, 1},
+  [14] =
     {field_name, 0},
     {field_value, 2},
 };
@@ -2793,10 +2806,10 @@ static TSParseActionEntry ts_parse_actions[] = {
   [130] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_node_id, 2),
   [132] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph, 1, .production_id = 4),
   [134] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph, 1, .production_id = 4),
-  [136] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph, 3, .production_id = 5),
-  [138] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph, 3, .production_id = 5),
-  [140] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph, 2, .production_id = 1),
-  [142] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph, 2, .production_id = 1),
+  [136] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph, 3, .production_id = 8),
+  [138] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph, 3, .production_id = 8),
+  [140] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_subgraph, 2, .production_id = 7),
+  [142] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_subgraph, 2, .production_id = 7),
   [144] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_port, 4),
   [146] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_port, 4),
   [148] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_block, 2),
@@ -2804,8 +2817,8 @@ static TSParseActionEntry ts_parse_actions[] = {
   [152] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_attr_list_repeat1, 2),
   [154] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_attr_list_repeat1, 2),
   [156] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_attr_list_repeat1, 2), SHIFT_REPEAT(41),
-  [159] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_attribute, 3, .production_id = 7),
-  [161] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 3, .production_id = 7),
+  [159] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_attribute, 3, .production_id = 9),
+  [161] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 3, .production_id = 9),
   [163] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_attr_list, 1),
   [165] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attr_list, 1),
   [167] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_attr_list_repeat1, 3),

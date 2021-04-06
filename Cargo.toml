@@ -1,11 +1,11 @@
 [package]
 name = "tree-sitter-dot"
 description = "DOT grammar for the tree-sitter parsing library"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["rydesun <rydesun@gmail.com>"]
 keywords = ["incremental", "parsing", "dot", "graphviz"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-dot"
+repository = "https://github.com/rydesun/tree-sitter-dot"
 edition = "2018"
 license = "MIT"
 

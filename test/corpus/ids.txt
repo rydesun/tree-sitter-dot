@@ -154,6 +154,8 @@ graph {
 
   <<arbitrary>nested<tags<<>>>>
 
+  <a->b
+
   <multi<
   >lines>
 }
@@ -176,6 +178,14 @@ graph {
         (node_id
           (id
             (html_string))))
+      (node_stmt
+        (node_id
+          (id
+            (html_string))))
+      (node_stmt
+        (node_id
+          (id
+            (identifier))))
       (node_stmt
         (node_id
           (id

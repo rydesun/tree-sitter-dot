@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-dot"
 description = "DOT grammar for the tree-sitter parsing library"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["rydesun <rydesun@gmail.com>"]
 keywords = ["incremental", "parsing", "dot", "graphviz"]
 categories = ["parsing", "text-editors"]

@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-dot",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "DOT grammar for tree-sitter",
   "main": "bindings/node",
   "keywords": [

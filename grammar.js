@@ -132,7 +132,7 @@ module.exports = grammar({
       ),
     ),
 
-    identifier: _ => /[a-zA-Z\u0080-\u00FF_][0-9a-zA-Z\u0080-\u00FF_]*/,
+    identifier: _ => /[_\p{XID_Start}][_\p{XID_Continue}]*/,
 
     number_literal: _ => /-?(\.[0-9]+|[0-9]+(\.[0-9]*)?)/,
 

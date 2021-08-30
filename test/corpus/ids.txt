@@ -8,6 +8,7 @@ graph {
   a_b_c
   a0b1c2
   ÃÈè
+  允许包含中文等Unicode字符
 }
 
 ---
@@ -16,6 +17,10 @@ graph {
   type: (keyword)
   block: (block
     (stmt_list
+      (node_stmt
+        (node_id
+          (id
+            (identifier))))
       (node_stmt
         (node_id
           (id

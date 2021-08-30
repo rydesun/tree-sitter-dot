@@ -527,7 +527,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-zA-Z\\u0080-\\u00FF_][0-9a-zA-Z\\u0080-\\u00FF_]*"
+      "value": "[_\\p{XID_Start}][_\\p{XID_Continue}]*"
     },
     "number_literal": {
       "type": "PATTERN",

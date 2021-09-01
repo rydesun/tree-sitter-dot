@@ -117,7 +117,8 @@ graph {
               (identifier))
             (operator)
             value: (id
-              (html_string)))))
+              (html_string
+                (html_internal))))))
       (node_stmt
         (node_id
           (id

@@ -122,7 +122,7 @@ module.exports = grammar({
     id: $ => choice(
       $.identifier,
       $.number_literal,
-      alias($._html_string, $.html_string),
+      $.html_string,
       seq(
         $.string_literal,
         repeat(seq(
@@ -141,10 +141,21 @@ module.exports = grammar({
       /([^"\\]+|\\.)*"/,
     ),
 
-    _html_string: $ => seq(
+    html_string: $ => seq(
       '<',
-      repeat(choice(/[^<>]+/, $._html_string)),
+      optional(alias($._html_internal, $.html_internal)),
       '>',
+    ),
+
+    _html_internal: $ => repeat1(
+      choice(
+        /[^<>]+/,
+        seq(
+          '<',
+          optional($._html_internal),
+          '>',
+        ),
+      ),
     ),
 
     edgeop: _ => choice('->', '--'),

@@ -178,15 +178,18 @@ graph {
       (node_stmt
         (node_id
           (id
-            (html_string))))
+            (html_string
+              (html_internal)))))
       (node_stmt
         (node_id
           (id
-            (html_string))))
+            (html_string
+              (html_internal)))))
       (node_stmt
         (node_id
           (id
-            (html_string))))
+            (html_string
+              (html_internal)))))
       (node_stmt
         (node_id
           (id
@@ -194,7 +197,8 @@ graph {
       (node_stmt
         (node_id
           (id
-            (html_string)))))))
+            (html_string
+              (html_internal))))))))
 
 =========================
 ID with port
@@ -250,4 +254,5 @@ graph {
               (number_literal))
             (operator)
             (id
-              (html_string))))))))
+              (html_string
+                (html_internal)))))))))

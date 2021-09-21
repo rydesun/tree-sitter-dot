@@ -1,8 +1,6 @@
-(identifier) @identifier
 (keyword) @keyword
 (string_literal) @string
 (number_literal) @number
-(html_string) @tag
 
 [
   (edgeop)
@@ -19,7 +17,14 @@
   "}"
   "["
   "]"
+  "<"
+  ">"
 ] @punctuation.bracket
+
+(subgraph
+  id: (id
+    (identifier) @namespace)
+)
 
 (attribute
   name: (id
@@ -37,3 +42,5 @@
 ] @comment
 
 (ERROR) @error
+
+(identifier) @variable

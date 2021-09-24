@@ -4,7 +4,11 @@
 //! tree-sitter [Parser][], and then use the parser to parse some code:
 //!
 //! ```
-//! let code = "";
+//! let code = r#"
+//!     graph {
+//!         a -- b
+//!     }
+//! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! parser.set_language(tree_sitter_dot::language()).expect("Error loading dot grammar");
 //! let tree = parser.parse(code, None).unwrap();

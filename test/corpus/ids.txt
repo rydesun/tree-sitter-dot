@@ -14,7 +14,6 @@ graph {
 ---
 
 (source_file
-  type: (keyword)
   block: (block
     (stmt_list
       (node_stmt
@@ -60,7 +59,6 @@ graph {
 ---
 
 (source_file
-  type: (keyword)
   block: (block
     (stmt_list
       (node_stmt
@@ -118,7 +116,6 @@ graph {
 ---
 
 (source_file
-  type: (keyword)
   block: (block
     (stmt_list
       (node_stmt
@@ -168,7 +165,6 @@ graph {
 ---
 
 (source_file
-  type: (keyword)
   block: (block
     (stmt_list
       (node_stmt
@@ -214,7 +210,6 @@ graph {
 ---
 
 (source_file
-  type: (keyword)
   block: (block
     (stmt_list
       (node_stmt

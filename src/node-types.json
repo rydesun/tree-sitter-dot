@@ -19,15 +19,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "attr_list",
-          "named": true
-        },
-        {
-          "type": "keyword",
           "named": true
         }
       ]
@@ -252,27 +248,7 @@
             "named": true
           }
         ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword",
-            "named": true
-          }
-        ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "keyword",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -335,16 +311,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "keyword",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -392,12 +358,24 @@
     "named": true
   },
   {
+    "type": "digraph",
+    "named": false
+  },
+  {
+    "type": "edge",
+    "named": false
+  },
+  {
+    "type": "graph",
+    "named": false
+  },
+  {
     "type": "identifier",
     "named": true
   },
   {
-    "type": "keyword",
-    "named": true
+    "type": "node",
+    "named": false
   },
   {
     "type": "number_literal",
@@ -406,6 +384,14 @@
   {
     "type": "operator",
     "named": true
+  },
+  {
+    "type": "strict",
+    "named": false
+  },
+  {
+    "type": "subgraph",
+    "named": false
   },
   {
     "type": "{",

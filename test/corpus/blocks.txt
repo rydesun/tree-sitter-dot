@@ -9,8 +9,6 @@ strict graph {
 ---
 
 (source_file
-  (keyword)
-  type: (keyword)
   block: (block
     (stmt_list
       (edge_stmt
@@ -33,8 +31,6 @@ strict digraph {
 ---
 
 (source_file
-  (keyword)
-  type: (keyword)
   block: (block
     (stmt_list
       (edge_stmt
@@ -60,21 +56,15 @@ StRiCt grAPH {
 ---
 
 (source_file
-  (keyword)
-  type: (keyword)
   block: (block
     (stmt_list
       (subgraph
-        (keyword)
         block: (block))
       (attr_stmt
-        (keyword)
         (attr_list))
       (attr_stmt
-        (keyword)
         (attr_list))
       (attr_stmt
-        (keyword)
         (attr_list)))))
 
 =========================
@@ -92,15 +82,12 @@ graph {
 ---
 
 (source_file
-  type: (keyword)
   block: (block
     (stmt_list
       (subgraph
-        (keyword)
         block: (block
           (stmt_list
             (subgraph
-              (keyword)
               block: (block
                 (stmt_list
                   (subgraph

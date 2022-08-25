@@ -12,12 +12,12 @@ module.exports = grammar({
   rules: {
     source_file: $ => seq(
       optional(
-        alias(ignoreCase('strict'), $.keyword),
+        alias(ignoreCase('strict'), 'strict'),
       ),
-      field('type', choice(
-        alias(ignoreCase('graph'), $.keyword),
-        alias(ignoreCase('digraph'), $.keyword),
-      )),
+      choice(
+        alias(ignoreCase('graph'), 'graph'),
+        alias(ignoreCase('digraph'), 'digraph'),
+      ),
       optional(field('id', $.id)),
       field('block', $.block),
     ),
@@ -46,7 +46,7 @@ module.exports = grammar({
     subgraph: $ => seq(
       optional(
         seq(
-          alias(ignoreCase('subgraph'), $.keyword),
+          alias(ignoreCase('subgraph'), 'subgraph'),
           optional(field('id', $.id)),
         ),
       ),
@@ -77,9 +77,9 @@ module.exports = grammar({
 
     attr_stmt: $ => seq(
       choice(
-        alias(ignoreCase('graph'), $.keyword),
-        alias(ignoreCase('node'), $.keyword),
-        alias(ignoreCase('edge'), $.keyword),
+        alias(ignoreCase('graph'), 'graph'),
+        alias(ignoreCase('node'), 'node'),
+        alias(ignoreCase('edge'), 'edge'),
       ),
       $.attr_list,
     ),

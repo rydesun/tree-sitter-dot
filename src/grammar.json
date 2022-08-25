@@ -14,8 +14,8 @@
                 "type": "PATTERN",
                 "value": "[sS][tT][rR][iI][cC][tT]"
               },
-              "named": true,
-              "value": "keyword"
+              "named": false,
+              "value": "strict"
             },
             {
               "type": "BLANK"
@@ -23,31 +23,27 @@
           ]
         },
         {
-          "type": "FIELD",
-          "name": "type",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "ALIAS",
-                "content": {
-                  "type": "PATTERN",
-                  "value": "[gG][rR][aA][pP][hH]"
-                },
-                "named": true,
-                "value": "keyword"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[gG][rR][aA][pP][hH]"
               },
-              {
-                "type": "ALIAS",
-                "content": {
-                  "type": "PATTERN",
-                  "value": "[dD][iI][gG][rR][aA][pP][hH]"
-                },
-                "named": true,
-                "value": "keyword"
-              }
-            ]
-          }
+              "named": false,
+              "value": "graph"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[dD][iI][gG][rR][aA][pP][hH]"
+              },
+              "named": false,
+              "value": "digraph"
+            }
+          ]
         },
         {
           "type": "CHOICE",
@@ -164,8 +160,8 @@
                     "type": "PATTERN",
                     "value": "[sS][uU][bB][gG][rR][aA][pP][hH]"
                   },
-                  "named": true,
-                  "value": "keyword"
+                  "named": false,
+                  "value": "subgraph"
                 },
                 {
                   "type": "CHOICE",
@@ -288,8 +284,8 @@
                 "type": "PATTERN",
                 "value": "[gG][rR][aA][pP][hH]"
               },
-              "named": true,
-              "value": "keyword"
+              "named": false,
+              "value": "graph"
             },
             {
               "type": "ALIAS",
@@ -297,8 +293,8 @@
                 "type": "PATTERN",
                 "value": "[nN][oO][dD][eE]"
               },
-              "named": true,
-              "value": "keyword"
+              "named": false,
+              "value": "node"
             },
             {
               "type": "ALIAS",
@@ -306,8 +302,8 @@
                 "type": "PATTERN",
                 "value": "[eE][dD][gG][eE]"
               },
-              "named": true,
-              "value": "keyword"
+              "named": false,
+              "value": "edge"
             }
           ]
         },

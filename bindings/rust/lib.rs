@@ -10,27 +10,27 @@
 //!     }
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_dot::language()).expect("Error loading dot grammar");
+//! let language = tree_sitter_dot::LANGUAGE;
+//! parser.set_language(&language.into()).expect("Error loading dot grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
-//! [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
-//! [language func]: fn.language.html
 //! [Parser]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.html
 //! [tree-sitter]: https://tree-sitter.github.io/
 
-use tree_sitter::Language;
+/// Use LanguageFn instead of Language struct direct so we do not have issues
+/// between different versions
+use tree_sitter_language::LanguageFn;
 
 extern "C" {
-    fn tree_sitter_dot() -> Language;
+    fn tree_sitter_dot() -> *const ();
 }
 
-/// Get the tree-sitter [Language][] for this grammar.
+/// Get the tree-sitter grammar for dot.
 ///
 /// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
-pub fn language() -> Language {
-    unsafe { tree_sitter_dot() }
-}
+/// [LanguageFn]: https://docs.rs/tree-sitter-language/*/tree_sitter_language/struct.LanguageFn.html
+pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_dot) };
 
 /// The content of the [`node-types.json`][] file for this grammar.
 ///
@@ -46,7 +46,7 @@ mod tests {
     fn test_can_load_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(super::language())
+            .set_language(&super::LANGUAGE.into())
             .expect("Error loading dot language");
     }
 }
